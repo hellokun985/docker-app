@@ -1,0 +1,17 @@
+services:
+  cloudnas:
+    image: cloudnas/clouddrive2
+    container_name: clouddrive2
+    environment:
+      - TZ=Asia/Shanghai
+      - CLOUDDRIVE_HOME=/Config
+    volumes:
+      - :/CloudNAS:shared
+      - :/Config
+      - :/media:shared     # 服务器本地硬盘存储映射，挂载后应用才可以读取本地存储
+    devices:
+      - /dev/fuse:/dev/fuse
+    restart: unless-stopped
+    pid: "host"
+    privileged: true
+    network_mode: "host"
