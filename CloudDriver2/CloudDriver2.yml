@@ -16,4 +16,4 @@ services:
     privileged: true
     network_mode: "host"
     ports:
-      - 19798:19798   # 用于kejilion 脚本应用模板替换
+      - 19798:19798   # 用于kejilion脚本应用模板替换
