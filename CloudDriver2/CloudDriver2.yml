@@ -6,9 +6,9 @@ services:
       - TZ=Asia/Shanghai
       - CLOUDDRIVE_HOME=/Config
     volumes:
-      - :/CloudNAS:shared
-      - :/Config
-      - :/media:shared     # 服务器本地硬盘存储映射，挂载后应用才可以读取本地存储
+      - ./CloudNAS:/CloudNAS:shared
+      - ./Config:/Config
+      # - ./media:shared     # 可选项服务器本地硬盘存储映射，可以挂载到网络作为云盘使用，请自行将需要的硬盘或目录进行挂载
     devices:
       - /dev/fuse:/dev/fuse
     restart: unless-stopped
