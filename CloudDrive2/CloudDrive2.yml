@@ -1,6 +1,6 @@
 services:
   cloudnas:
-    image: cloudnas/clouddrive2
+    image: cloudnas/clouddrive2:latest
     container_name: CloudDrive2
     environment:
       - TZ=Asia/Shanghai
